@@ -1,0 +1,16 @@
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\bin\Debug\FootballAdministrationApp.exe.config
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\bin\Debug\FootballAdministrationApp.exe
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\bin\Debug\FootballAdministrationApp.pdb
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.csproj.AssemblyReference.cache
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.csproj.SuggestedBindingRedirects.cache
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\View\MainWindow.g.cs
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\App.g.cs
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp_MarkupCompile.cache
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp_MarkupCompile.lref
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\View\MainWindow.baml
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.g.resources
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.Properties.Resources.resources
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.csproj.GenerateResource.cache
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.csproj.CoreCompileInputs.cache
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.exe
+C:\Users\Andrin\Desktop\Learn Projects\WPF Testapps\FootballAdministrationApp\obj\Debug\FootballAdministrationApp.pdb
