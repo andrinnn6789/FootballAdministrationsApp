@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using FootballAdministrationApp.View;
 
 namespace FootballAdministrationApp
 {
@@ -23,6 +24,24 @@ namespace FootballAdministrationApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            PlayerWindow p = new PlayerWindow();
+            p.ShowDialog();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            TeamWindow t = new TeamWindow();
+            t.ShowDialog();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            PlayerAssign pa = new PlayerAssign();
+            pa.ShowDialog();
         }
     }
 }
