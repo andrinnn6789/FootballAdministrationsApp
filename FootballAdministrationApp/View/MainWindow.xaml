@@ -39,9 +39,9 @@
 
         <Grid Grid.Column="0" Grid.Row="1">
             <StackPanel Grid.Row="1">
-                <Button Content="Spieler bearbeiten"  Style="{StaticResource NormalButton}" Click="Button_Click"/>
-                <Button Content="Spieler hinzufügen"  Style="{StaticResource NormalButton}" Click="Button_Click"/>
-                <Button Content="Spieler löschen"  Style="{StaticResource NormalButton}"/>
+                <Button Content="Spieler bearbeiten" Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyPlayerCommand}"/>
+                <Button Content="Spieler hinzufügen"  Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyPlayerCommand}"/>
+                <Button Content="Spieler löschen"  Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyPlayerCommand}"/>
             </StackPanel>
         </Grid>
 
@@ -60,9 +60,9 @@
 
         <Grid Grid.Column="1" Grid.Row="1">
             <StackPanel Grid.Row="1">
-                <Button Content="Mannschaft bearbeiten"  Style="{StaticResource NormalButton}" Click="Button_Click_1"/>
-                <Button Content="Mannschaft hinzufügen"  Style="{StaticResource NormalButton}" Click="Button_Click_1"/>
-                <Button Content="Mannschaft löschen"  Style="{StaticResource NormalButton}"/>
+                <Button Content="Mannschaft bearbeiten"  Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyTeamCommand}"/>
+                <Button Content="Mannschaft hinzufügen"  Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyTeamCommand}"/>
+                <Button Content="Mannschaft löschen"  Style="{StaticResource NormalButton}" Command="{Binding AddOrModifyTeamCommand}"/>
             </StackPanel>
         </Grid>
 
@@ -85,7 +85,7 @@
         <Grid Grid.Column="2" Grid.Row="1">
             <StackPanel Grid.Row="1">
                 <Button Content="Details anzeigen/verbergen"  Style="{StaticResource NormalButton}"/>
-                <Button Content="Spieler zuweisen"  Style="{StaticResource NormalButton}" Click="Button_Click_2"/>
+                <Button Content="Spieler zuweisen"  Style="{StaticResource NormalButton}"/>
                 <Button Content="Spieler entfernen"  Style="{StaticResource NormalButton}"/>
             </StackPanel>
         </Grid>

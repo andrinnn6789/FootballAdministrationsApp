@@ -10,6 +10,7 @@ namespace FootballAdministrationApp.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
+        public bool isEditable { get; set; }
 
         private readonly List<Player> _players = new List<Player>(); 
 
@@ -42,7 +43,7 @@ namespace FootballAdministrationApp.Model
             return _players.FirstOrDefault(p => p.Id == idToSearch);
         }
 
-        public void DeleteOnePlayerById(int idToSearch)
+        public void RemoveOnePlayerById(int idToSearch)
         {
             var player = _players.FirstOrDefault(p => p.Id == idToSearch);
             _players.Remove(player);
