@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FootballAdministrationApp.Model;
 using FootballAdministrationApp.View;
+using FootballAdministrationApp.View.Interfaces;
 using FootballAdministrationApp.ViewModel;
 
 namespace FootballAdministrationApp
@@ -21,14 +23,19 @@ namespace FootballAdministrationApp
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window, IOpenWindowService
     {
         public MainWindow()
         {
             InitializeComponent();
-            var players = new LinkedList<Player>();
-            var teams = new LinkedList<Team>();
+            var players = new ObservableCollection<Player>();
+            var teams = new ObservableCollection<Team>();
             DataContext = new MainWindowViewModel(players, teams);
+        }
+
+        public IFootballObject CreateNewWindow(IDialogService dialogService, IFootballObject editObject)
+        {
+            return dialogService.CreateNewWindow(editObject);
         }
     }
 }

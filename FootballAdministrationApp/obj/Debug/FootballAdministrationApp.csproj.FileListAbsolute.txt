@@ -107,3 +107,12 @@ C:\Users\Andrin\source\repos\FootballAdministrationsApp\FootballAdministrationAp
 C:\Users\Andrin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.xml
 C:\Users\Andrin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.Wpf.pdb
 C:\Users\Andrin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.Wpf.xml
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.dll
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.Wpf.dll
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.pdb
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.xml
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.Wpf.pdb
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\bin\Debug\Prism.Wpf.xml

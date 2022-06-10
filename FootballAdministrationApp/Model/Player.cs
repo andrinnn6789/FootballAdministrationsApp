@@ -1,8 +1,9 @@
-﻿using SQLite;
+﻿using FootballAdministrationApp.View.Interfaces;
+using SQLite;
 
 namespace FootballAdministrationApp.Model
 {
-    public class Player
+    public class Player : IFootballObject
     {
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }

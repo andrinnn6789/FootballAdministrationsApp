@@ -43,7 +43,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Button Content="Abbrechen" Grid.Column="1" Style="{StaticResource NormalButton}"/>
+                <Button Content="Abbrechen" Grid.Column="1" Style="{StaticResource NormalButton}" Command="{Binding CloseWindow}"/>
                 <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}"/>
             </Grid>
         </Grid>

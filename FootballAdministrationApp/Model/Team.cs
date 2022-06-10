@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using FootballAdministrationApp.View.Interfaces;
 using SQLite;
 
 namespace FootballAdministrationApp.Model
 {
-    public class Team
+    public class Team : IFootballObject
     {
         [PrimaryKey,AutoIncrement]
         public int Id { get; set; }

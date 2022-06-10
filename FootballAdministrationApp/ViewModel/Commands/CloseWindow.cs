@@ -10,13 +10,13 @@ using FootballAdministrationApp.View.Interfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class AgonizePlayerCommand : ICommand
+    public class CloseWindow : ICommand
     {
-        private readonly MainWindowViewModel _viewModel;
+        private readonly IDialogService _dialogService;
 
-        public AgonizePlayerCommand(MainWindowViewModel viewModel)
+        public CloseWindow(IDialogService dialogService)
         {
-            _viewModel = viewModel;
+            _dialogService = dialogService;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,14 +28,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
+            _dialogService.CloseWindow();
             OnCanExecuteChanged();
-            IOpenWindowService dialog = new MainWindow();
-            _viewModel.Teams.Add(new Team());
-            _viewModel.Teams[0].AddPlayer(new Player("1","Moooin",1,1,1,1));
-            _viewModel.Teams[0].AddPlayer(new Player("3","Moooin",1,1,1,1));
-            _viewModel.Teams[0].AddPlayer(new Player("4","Moooin",1,1,1,1));
-            Player player = (Player)dialog.CreateNewWindow(new PlayerAssign(), _viewModel.Teams[0]);
-            _viewModel.Teams[0].RemoveOnePlayerById(player.Id);
         }
 
         protected virtual void OnCanExecuteChanged()

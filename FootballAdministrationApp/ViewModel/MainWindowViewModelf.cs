@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,19 @@ namespace FootballAdministrationApp.ViewModel
 {
     public class MainWindowViewModel : BindableBase
     {
-        private LinkedList<Player> _players;
-        private LinkedList<Team> _teams;
+        private ObservableCollection<Player> _players;
+        private ObservableCollection<Team> _teams;
 
-        public MainWindowViewModel(LinkedList<Player> players, LinkedList<Team> teams)
+        public ObservableCollection<Player> Players
+        {
+            get { return _players; }
+        }
+        public ObservableCollection<Team> Teams
+        {
+            get { return _teams; }
+        }
+
+        public MainWindowViewModel(ObservableCollection<Player> players, ObservableCollection<Team> teams)
         {
             _players = players;
             _teams = teams;

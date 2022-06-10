@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj": {}
+    "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj": {
+    "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj",
+        "projectUniqueName": "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj",
         "projectName": "FootballAdministrationAppTest",
-        "projectPath": "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj",
-        "packagesPath": "C:\\Users\\Andrin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\obj\\",
+        "projectPath": "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\FootballAdministrationAppTest.csproj",
+        "packagesPath": "C:\\Users\\vmadmin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\FootballAdministrationAppTest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Andrin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vmadmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
