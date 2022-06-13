@@ -57,7 +57,7 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public PlayerAssignViewModel(Team team, PlayerAssign view)
+        public PlayerAssignViewModel(Team team, IDialogService view)
         {
             _team = team;
             _players = team.GetPlayers();

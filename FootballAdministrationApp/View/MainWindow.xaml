@@ -26,13 +26,17 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Column="0" Grid.Row="0">
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="0">
                 <TextBlock Text="Verfügbare Spieler:" Style="{StaticResource NormalText}"/>
-                <ListBox Name="availablePlayers" Style="{StaticResource NormalListBox}">
-                    <ListBoxItem>Cristiano Ronaldo</ListBoxItem>
-                    <ListBoxItem>Thomas Müller</ListBoxItem>
-                    <ListBoxItem>Pascal Schürpf</ListBoxItem>
-                    <ListBoxItem>Erling Haaland</ListBoxItem>
+                <ListBox Name="availablePlayers" Style="{StaticResource NormalListBox}" ItemsSource="{Binding Players}" SelectedItem="{Binding Player}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding LastName}"/>
+                                <TextBlock Text="{Binding FirstName}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
         </Grid>
@@ -46,14 +50,17 @@
         </Grid>
 
         <Grid Grid.Column="1" Grid.Row="0">
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="0">
                 <TextBlock Text="Verfügbare Mannschaften:" Style="{StaticResource NormalText}"/>
-
-                <ListBox Name="availableTeams" Style="{StaticResource NormalListBox}">
-                    <ListBoxItem>Bayern München</ListBoxItem>
-                    <ListBoxItem>Manchesr United</ListBoxItem>
-                    <ListBoxItem>Leverkusen</ListBoxItem>
-                    <ListBoxItem>Luzern</ListBoxItem>
+                <ListBox Name="availableTeams" Style="{StaticResource NormalListBox}" ItemsSource="{Binding Teams}" SelectedItem="{Binding Team}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding Name}"/>
+                                <TextBlock Text="{Binding Country}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
         </Grid>

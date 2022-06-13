@@ -28,9 +28,13 @@ namespace FootballAdministrationApp
         public MainWindow()
         {
             InitializeComponent();
-            var players = new ObservableCollection<Player>();
             var teams = new ObservableCollection<Team>();
-            DataContext = new MainWindowViewModel(players, teams);
+            teams.Add(new Team());
+            teams[0].AddPlayer(new Player("1", "Moooin", 1, 1, 1, 1));
+            teams[0].AddPlayer(new Player("3", "Moooin", 1, 1, 1, 1));
+            teams[0].AddPlayer(new Player("4", "Moooin", 1, 1, 1, 1));
+            teams.Add(new Team("Bayern","Deutschland"));
+            DataContext = new MainWindowViewModel(teams);
         }
 
         public void CreateNewWindow(IDialogService dialogService, IFootballObject editObject)

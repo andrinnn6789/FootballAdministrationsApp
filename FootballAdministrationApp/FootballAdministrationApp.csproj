@@ -100,7 +100,7 @@
     <Compile Include="ViewModel\Commands\AgonizePlayerCommand.cs" />
     <Compile Include="ViewModel\Commands\AddOrModifyTeamCommand.cs" />
     <Compile Include="ViewModel\Commands\AddOrModifyPlayerCommand.cs" />
-    <Compile Include="ViewModel\MainWindowViewModelf.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PlayerAssignViewModel.cs" />
     <Compile Include="View\Interfaces\IOpenWindowService.cs" />
     <Compile Include="View\Interfaces\IDialogService.cs" />

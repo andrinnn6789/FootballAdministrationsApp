@@ -8,6 +8,7 @@ namespace FootballAdministrationApp.Model
 {
     public class Team : IFootballObject
     {
+        private static int currentId = 0;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
@@ -19,12 +20,16 @@ namespace FootballAdministrationApp.Model
         {
             Name = "Hobby Ginger";
             Country = "Germany";
+            Id = currentId;
+            currentId++;
         }
 
         public Team(string name,string country)
         {
             Name = name;
             Country = country;
+            Id = currentId;
+            currentId++;
         }
 
         public void AddPlayer(Player player)
