@@ -20,11 +20,15 @@
 
         <StackPanel Grid.Row="0">
             <TextBlock Text="Verfügbare Spieler:" Style="{StaticResource NormalText}"/>
-            <ListBox Name="availablePlayers" Style="{StaticResource NormalListBox}">
-                <ListBoxItem>Cristiano Ronaldo</ListBoxItem>
-                <ListBoxItem>Thomas Müller</ListBoxItem>
-                <ListBoxItem>Pascal Schürpf</ListBoxItem>
-                <ListBoxItem>Erling Haaland</ListBoxItem>
+            <ListBox Name="availablePlayers" Style="{StaticResource NormalListBox}" ItemsSource="{Binding Players}" SelectedItem="{Binding Player}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="{Binding LastName}"/>
+                            <TextBlock Text="{Binding FirstName}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
         </StackPanel>
 
@@ -35,7 +39,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button Content="Abbrechen" Grid.Column="1" Style="{StaticResource NormalButton}" Command="{Binding CloseWindow}"/>
-            <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}"/>
+            <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}" Command="{Binding SafeWindowPlayerAssign}"/>
         </Grid>
     </Grid>
 </Window>

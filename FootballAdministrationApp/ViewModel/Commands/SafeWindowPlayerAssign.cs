@@ -13,10 +13,12 @@ namespace FootballAdministrationApp.ViewModel.Commands
     public class SafeWindowPlayerAssign : ICommand
     {
         private readonly IDialogService _dialogService;
+        private readonly PlayerAssignViewModel _viewModel;
 
-        public SafeWindowPlayerAssign(IDialogService dialogService)
+        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IDialogService dialogService)
         {
             _dialogService = dialogService;
+            _viewModel = viewModel;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,6 +30,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
+            _viewModel.Team.RemoveOnePlayerById(_viewModel.Player.Id);
             _dialogService.CloseWindow();
             OnCanExecuteChanged();
         }

@@ -5,7 +5,7 @@ namespace FootballAdministrationApp.Model
 {
     public class Player : IFootballObject
     {
-        [PrimaryKey,AutoIncrement]
+        private static int currentId = 0;
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -26,6 +26,8 @@ namespace FootballAdministrationApp.Model
             WeightInKg = 0;
             SizeInCm = 0;
             MarketValue = 0;
+            Id = currentId;
+            currentId++;
         }
 
         public Player(string firstName, string lastName, int age, int weightInKg, int sizeInCm, double marketValue)
@@ -36,6 +38,8 @@ namespace FootballAdministrationApp.Model
             WeightInKg = weightInKg;
             SizeInCm = sizeInCm;
             MarketValue = marketValue;
+            Id = currentId;
+            currentId++;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using FootballAdministrationApp.View.Interfaces;
 using SQLite;
@@ -7,13 +8,12 @@ namespace FootballAdministrationApp.Model
 {
     public class Team : IFootballObject
     {
-        [PrimaryKey,AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
         public bool isEditable { get; set; }
 
-        private readonly List<Player> _players = new List<Player>(); 
+        private readonly ObservableCollection<Player> _players = new ObservableCollection<Player>(); 
 
         public Team()
         {
@@ -34,7 +34,7 @@ namespace FootballAdministrationApp.Model
             player.Fk_TeamId = this.Id;
         }
 
-        public IEnumerable<Player> GetPlayers()
+        public ObservableCollection<Player> GetPlayers()
         {
             return _players;
         }

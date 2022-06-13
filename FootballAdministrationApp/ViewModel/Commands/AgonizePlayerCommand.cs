@@ -34,8 +34,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
             _viewModel.Teams[0].AddPlayer(new Player("1","Moooin",1,1,1,1));
             _viewModel.Teams[0].AddPlayer(new Player("3","Moooin",1,1,1,1));
             _viewModel.Teams[0].AddPlayer(new Player("4","Moooin",1,1,1,1));
-            Player player = (Player)dialog.CreateNewWindow(new PlayerAssign(), _viewModel.Teams[0]);
-            _viewModel.Teams[0].RemoveOnePlayerById(player.Id);
+            dialog.CreateNewWindow(new PlayerAssign(), _viewModel.Teams[0]);
         }
 
         protected virtual void OnCanExecuteChanged()

@@ -33,9 +33,9 @@ namespace FootballAdministrationApp
             DataContext = new MainWindowViewModel(players, teams);
         }
 
-        public IFootballObject CreateNewWindow(IDialogService dialogService, IFootballObject editObject)
-        {
-            return dialogService.CreateNewWindow(editObject);
+        public void CreateNewWindow(IDialogService dialogService, IFootballObject editObject)
+        { 
+            dialogService.CreateNewWindow(editObject);
         }
     }
 }

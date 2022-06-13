@@ -1,0 +1,24 @@
+﻿<Window x:Class="MVVM_Vorlage.View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBox Text="{Binding FirstName}" Name="Box"/>
+        <TextBox Text="{Binding LastName}"/>
+        <TextBlock Text="{Binding FormattedName}"/>
+        <Button Content="add items to box" Command="{Binding ChangeName}"/>
+        <ListBox ItemsSource="{Binding Users}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding LastName}"/>
+                        <TextBlock Text="{Binding FirstName}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </StackPanel>
+</Window>

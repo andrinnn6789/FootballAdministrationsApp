@@ -27,16 +27,13 @@ namespace FootballAdministrationApp.View
             InitializeComponent();
         }
 
-        public IFootballObject CreateNewWindow(IFootballObject editObject)
+        public void CreateNewWindow(IFootballObject editObject)
         {
-            Team team = (Team) editObject;
-            var players = team.GetPlayers();
-            foreach (var player in players)
-            {
-                availablePlayers.Items.Add($"{player.Id} {player.FirstName} {player.LastName}");
-            }
-            DataContext = new PlayerAssignViewModel(team, this);
+            var playerAssignViewModel = new PlayerAssignViewModel((Team) editObject, this);
+            this.DataContext = playerAssignViewModel;
             this.ShowDialog();
+            /*
+            Team team = (Team)editObject;
             var idString = string.Empty;
             foreach (var currentChar in availablePlayers.SelectedItem.ToString())
             {
@@ -45,17 +42,12 @@ namespace FootballAdministrationApp.View
                 idString += currentChar.ToString();
             }
             
-            return team.GetOnePlayerById(Convert.ToInt32(idString));
+            return team.GetOnePlayerById(Convert.ToInt32(idString));*/
         }
 
         public void CloseWindow()
         {
             Close();
-        }
-
-        public void SafeWindow()
-        {
-
         }
     }
 }
