@@ -30,7 +30,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
         {
             OnCanExecuteChanged();
             IOpenWindowService dialog = new MainWindow();
-            dialog.CreateNewWindow(new PlayerAssign(), _viewModel.Teams[0]);
+            dialog.CreateNewWindow(new PlayerAssign(), _viewModel.teams[0], _viewModel.Team);
         }
 
         protected virtual void OnCanExecuteChanged()

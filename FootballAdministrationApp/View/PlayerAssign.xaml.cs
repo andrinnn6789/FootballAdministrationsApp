@@ -27,22 +27,11 @@ namespace FootballAdministrationApp.View
             InitializeComponent();
         }
 
-        public void CreateNewWindow(IFootballObject editObject)
+        public void CreateNewWindow(IFootballObject sourceObject, IFootballObject targetObject)
         {
-            var playerAssignViewModel = new PlayerAssignViewModel((Team) editObject, this);
+            var playerAssignViewModel = new PlayerAssignViewModel((Team) sourceObject, (Team) targetObject, this);
             this.DataContext = playerAssignViewModel;
             this.ShowDialog();
-            /*
-            Team team = (Team)editObject;
-            var idString = string.Empty;
-            foreach (var currentChar in availablePlayers.SelectedItem.ToString())
-            {
-                if (currentChar == ' ')
-                    break;
-                idString += currentChar.ToString();
-            }
-            
-            return team.GetOnePlayerById(Convert.ToInt32(idString));*/
         }
 
         public void CloseWindow()

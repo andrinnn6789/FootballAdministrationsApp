@@ -30,7 +30,11 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            _viewModel.Team.RemoveOnePlayerById(_viewModel.Player.Id);
+            if (_viewModel.Player != null)
+            {
+                _viewModel.targetTeam.AddPlayer(_viewModel.Player);
+                _viewModel.SourceTeam.RemoveOnePlayerById(_viewModel.Player.Id);
+            }
             _dialogService.CloseWindow();
             OnCanExecuteChanged();
         }

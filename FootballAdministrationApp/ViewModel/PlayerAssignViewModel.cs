@@ -16,10 +16,11 @@ namespace FootballAdministrationApp.ViewModel
 {
     public class PlayerAssignViewModel : BindableBase
     {
-        private Team _team;
+        private Team _sourceTeam;
         private readonly IDialogService _view;
         private ObservableCollection<Player> _players;
         private Player _player;
+        public Team targetTeam { get; set; }
 
         public ObservableCollection<Player> Players
         {
@@ -45,22 +46,23 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public Team Team
+        public Team SourceTeam
         {
-            get { return _team; }
+            get { return _sourceTeam; }
             set
             {
-                if (SetProperty(ref _team, value))
+                if (SetProperty(ref _sourceTeam, value))
                 {
-                    OnPropertyChanged(new PropertyChangedEventArgs(nameof(_team)));
+                    OnPropertyChanged(new PropertyChangedEventArgs(nameof(_sourceTeam)));
                 }
             }
         }
 
-        public PlayerAssignViewModel(Team team, IDialogService view)
+        public PlayerAssignViewModel(Team sourceTeam, Team targetTeam,IDialogService view)
         {
-            _team = team;
-            _players = team.GetPlayers();
+            _sourceTeam = sourceTeam;
+            this.targetTeam = targetTeam;
+            _players = sourceTeam.GetPlayers();
             _view = view ?? throw new ArgumentNullException(nameof(view));
             CloseWindow = new CloseWindow(view);
             SafeWindowPlayerAssign = new SafeWindowPlayerAssign(this, view);

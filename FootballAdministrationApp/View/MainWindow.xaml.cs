@@ -34,12 +34,15 @@ namespace FootballAdministrationApp
             teams[0].AddPlayer(new Player("3", "Moooin", 1, 1, 1, 1));
             teams[0].AddPlayer(new Player("4", "Moooin", 1, 1, 1, 1));
             teams.Add(new Team("Bayern","Deutschland"));
+            teams[1].AddPlayer(new Player());
+            teams[1].AddPlayer(new Player());
+            teams.Add(new Team());
             DataContext = new MainWindowViewModel(teams);
         }
 
-        public void CreateNewWindow(IDialogService dialogService, IFootballObject editObject)
+        public void CreateNewWindow(IDialogService dialogService, IFootballObject sourceObject, IFootballObject targetObject)
         { 
-            dialogService.CreateNewWindow(editObject);
+            dialogService.CreateNewWindow(sourceObject, targetObject);
         }
     }
 }
