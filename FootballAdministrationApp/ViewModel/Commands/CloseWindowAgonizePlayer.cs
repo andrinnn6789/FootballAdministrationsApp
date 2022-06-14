@@ -10,13 +10,13 @@ using FootballAdministrationApp.View.Interfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class CloseWindow : ICommand
+    public class CloseWindowAgonizePlayer : ICommand
     {
-        private readonly IDialogService _dialogService;
+        private readonly IAgonizePlayerService _agonizePlayerService;
 
-        public CloseWindow(IDialogService dialogService)
+        public CloseWindowAgonizePlayer(IAgonizePlayerService agonizePlayerService)
         {
-            _dialogService = dialogService;
+            _agonizePlayerService = agonizePlayerService;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,7 +28,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            _dialogService.CloseWindow();
+            _agonizePlayerService.CloseWindow();
             OnCanExecuteChanged();
         }
 

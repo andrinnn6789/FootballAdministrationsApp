@@ -8,6 +8,6 @@ namespace FootballAdministrationApp.View.Interfaces
 {
     public interface IOpenWindowService
     {
-        void CreateNewWindow(IDialogService dialogService, IFootballObject sourceObject, IFootballObject targetObject);
+        void CreateNewWindow(IAgonizePlayerService agonizePlayerService, IFootballObject sourceObject, IFootballObject targetObject);
     }
 }

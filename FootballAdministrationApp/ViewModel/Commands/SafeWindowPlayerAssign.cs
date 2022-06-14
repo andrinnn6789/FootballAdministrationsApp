@@ -12,12 +12,12 @@ namespace FootballAdministrationApp.ViewModel.Commands
 {
     public class SafeWindowPlayerAssign : ICommand
     {
-        private readonly IDialogService _dialogService;
+        private readonly IAgonizePlayerService _agonizePlayerService;
         private readonly PlayerAssignViewModel _viewModel;
 
-        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IDialogService dialogService)
+        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IAgonizePlayerService agonizePlayerService)
         {
-            _dialogService = dialogService;
+            _agonizePlayerService = agonizePlayerService;
             _viewModel = viewModel;
         }
 
@@ -35,7 +35,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
                 _viewModel.targetTeam.AddPlayer(_viewModel.Player);
                 _viewModel.SourceTeam.RemoveOnePlayerById(_viewModel.Player.Id);
             }
-            _dialogService.CloseWindow();
+            _agonizePlayerService.CloseWindow();
             OnCanExecuteChanged();
         }
 

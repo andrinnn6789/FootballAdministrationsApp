@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using FootballAdministrationApp.Model;
+using FootballAdministrationApp.View.Interfaces;
 using FootballAdministrationApp.ViewModel.Commands;
 using Prism.Mvvm;
 
@@ -15,6 +16,8 @@ namespace FootballAdministrationApp.ViewModel
 {
     public class MainWindowViewModel : BindableBase
     {
+        public IOpenWindowService View;
+        public IAgonizePlayerService AgonizePlayerView;
         public ObservableCollection<Player> players;
         public ObservableCollection<Player> availablePlayers;
         public ObservableCollection<Team> teams;
@@ -130,13 +133,15 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public MainWindowViewModel(ObservableCollection<Team> teams)
+        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IAgonizePlayerService agonizePlayerViewView)
         {
+            View = view;
+            AgonizePlayerView = agonizePlayerViewView;
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
             availablePlayers = teams[0].GetPlayers();
             this.teams = teams;
-            AddOrModifyPlayerCommand = new AddOrModifyPlayerCommand(this);
-            AddOrModifyTeamCommand = new AddOrModifyTeamCommand(this);
+            AddOrModifyPlayerCommand = new AddPlayerCommand(this);
+            AddOrModifyTeamCommand = new AddTeamCommand(this);
             AgonizePlayerCommand = new AgonizePlayerCommand(this);
         }
 

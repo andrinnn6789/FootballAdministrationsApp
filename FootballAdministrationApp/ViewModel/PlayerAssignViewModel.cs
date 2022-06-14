@@ -17,7 +17,7 @@ namespace FootballAdministrationApp.ViewModel
     public class PlayerAssignViewModel : BindableBase
     {
         private Team _sourceTeam;
-        private readonly IDialogService _view;
+        private readonly IAgonizePlayerService _view;
         private ObservableCollection<Player> _players;
         private Player _player;
         public Team targetTeam { get; set; }
@@ -36,7 +36,7 @@ namespace FootballAdministrationApp.ViewModel
 
         public Player Player
         {
-            get { return _player; }
+            get => _player;
             set
             {
                 if (SetProperty(ref _player, value))
@@ -48,7 +48,7 @@ namespace FootballAdministrationApp.ViewModel
 
         public Team SourceTeam
         {
-            get { return _sourceTeam; }
+            get => _sourceTeam;
             set
             {
                 if (SetProperty(ref _sourceTeam, value))
@@ -58,13 +58,13 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public PlayerAssignViewModel(Team sourceTeam, Team targetTeam,IDialogService view)
+        public PlayerAssignViewModel(Team sourceTeam, Team targetTeam,IAgonizePlayerService view)
         {
             _sourceTeam = sourceTeam;
             this.targetTeam = targetTeam;
             _players = sourceTeam.GetPlayers();
             _view = view ?? throw new ArgumentNullException(nameof(view));
-            CloseWindow = new CloseWindow(view);
+            CloseWindow = new CloseWindowAgonizePlayer(view);
             SafeWindowPlayerAssign = new SafeWindowPlayerAssign(this, view);
         }
 

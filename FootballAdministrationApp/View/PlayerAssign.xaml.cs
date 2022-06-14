@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace FootballAdministrationApp.View
     /// <summary>
     /// Interaktionslogik für PlayerAssign.xaml
     /// </summary>
-    public partial class PlayerAssign : Window, IDialogService
+    public partial class PlayerAssign : Window, IAgonizePlayerService
     {
         public PlayerAssign()
         {
@@ -30,13 +31,19 @@ namespace FootballAdministrationApp.View
         public void CreateNewWindow(IFootballObject sourceObject, IFootballObject targetObject)
         {
             var playerAssignViewModel = new PlayerAssignViewModel((Team) sourceObject, (Team) targetObject, this);
-            this.DataContext = playerAssignViewModel;
-            this.ShowDialog();
+            DataContext = playerAssignViewModel;
+            ShowDialog();
         }
 
         public void CloseWindow()
         {
-            Close();
+            Hide();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            CloseWindow();
         }
     }
 }

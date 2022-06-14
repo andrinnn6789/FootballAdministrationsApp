@@ -7,11 +7,11 @@ using System.Windows.Input;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class AddOrModifyTeamCommand : ICommand
+    public class AddTeamCommand : ICommand
     {
         private readonly MainWindowViewModel _viewModel;
 
-        public AddOrModifyTeamCommand(MainWindowViewModel viewModel)
+        public AddTeamCommand(MainWindowViewModel viewModel)
         {
             _viewModel = viewModel;
         }

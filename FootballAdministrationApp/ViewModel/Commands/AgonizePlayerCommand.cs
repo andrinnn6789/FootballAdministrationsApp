@@ -29,8 +29,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
         public void Execute(object parameter)
         {
             OnCanExecuteChanged();
-            IOpenWindowService dialog = new MainWindow();
-            dialog.CreateNewWindow(new PlayerAssign(), _viewModel.teams[0], _viewModel.Team);
+            IOpenWindowService dialog = _viewModel.View;
+            dialog.CreateNewWindow(_viewModel.AgonizePlayerView, _viewModel.teams[0], _viewModel.Team);
         }
 
         protected virtual void OnCanExecuteChanged()

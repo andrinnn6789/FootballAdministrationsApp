@@ -37,12 +37,12 @@ namespace FootballAdministrationApp
             teams[1].AddPlayer(new Player());
             teams[1].AddPlayer(new Player());
             teams.Add(new Team());
-            DataContext = new MainWindowViewModel(teams);
+            DataContext = new MainWindowViewModel(teams, this, new PlayerAssign());
         }
 
-        public void CreateNewWindow(IDialogService dialogService, IFootballObject sourceObject, IFootballObject targetObject)
+        public void CreateNewWindow(IAgonizePlayerService agonizePlayerService, IFootballObject sourceObject, IFootballObject targetObject)
         { 
-            dialogService.CreateNewWindow(sourceObject, targetObject);
+            agonizePlayerService.CreateNewWindow(sourceObject, targetObject);
         }
     }
 }
