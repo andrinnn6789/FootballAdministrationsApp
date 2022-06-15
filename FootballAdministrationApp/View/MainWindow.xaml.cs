@@ -15,8 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using FootballAdministrationApp.Model;
 using FootballAdministrationApp.View;
-using FootballAdministrationApp.View.Interfaces;
 using FootballAdministrationApp.ViewModel;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp
 {
@@ -40,9 +40,19 @@ namespace FootballAdministrationApp
             DataContext = new MainWindowViewModel(teams, this, new PlayerAssign());
         }
 
-        public void CreateNewWindow(IAgonizePlayerService agonizePlayerService, IFootballObject sourceObject, IFootballObject targetObject)
+        public void CreateNewPlayerAssignWindow(IPlayerAssignService playerAssignService, Team sourceObject, Team targetObject)
         { 
-            agonizePlayerService.CreateNewWindow(sourceObject, targetObject);
+            playerAssignService.CreateNewWindow(sourceObject, targetObject);
+        }
+
+        public void CreateNewPlayerWindow(IPlayerWindowService playerWindowService, Team targetObject)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject)
+        {
+            throw new NotImplementedException();
         }
     }
 }

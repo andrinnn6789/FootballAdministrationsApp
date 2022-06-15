@@ -52,7 +52,7 @@
         <Grid Grid.Column="1" Grid.Row="0">
             <StackPanel Grid.Row="0">
                 <TextBlock Text="Verfügbare Mannschaften:" Style="{StaticResource NormalText}"/>
-                <ListBox Name="availableTeams" Style="{StaticResource NormalListBox}" ItemsSource="{Binding Teams}" SelectedItem="{Binding Team}">
+                <ListBox  Name="availableTeams" Style="{StaticResource NormalListBox}" ItemsSource="{Binding Teams}" SelectedItem="{Binding Team}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using FootballAdministrationApp.Model;
 using FootballAdministrationApp.View;
-using FootballAdministrationApp.View.Interfaces;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
     public class SafeWindowPlayerAssign : ICommand
     {
-        private readonly IAgonizePlayerService _agonizePlayerService;
+        private readonly IPlayerAssignService _playerAssignService;
         private readonly PlayerAssignViewModel _viewModel;
 
-        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IAgonizePlayerService agonizePlayerService)
+        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IPlayerAssignService playerAssignService)
         {
-            _agonizePlayerService = agonizePlayerService;
+            _playerAssignService = playerAssignService;
             _viewModel = viewModel;
         }
 
@@ -30,12 +30,12 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            if (_viewModel.Player != null)
+            if (_viewModel.Player != null && _viewModel.targetTeam != null)
             {
                 _viewModel.targetTeam.AddPlayer(_viewModel.Player);
                 _viewModel.SourceTeam.RemoveOnePlayerById(_viewModel.Player.Id);
             }
-            _agonizePlayerService.CloseWindow();
+            _playerAssignService.CloseWindow();
             OnCanExecuteChanged();
         }
 

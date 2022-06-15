@@ -13,6 +13,8 @@
         <Setter Property="ListBox.Margin" Value="10,0,10,0"/>
         <Setter Property="ListBox.BorderThickness" Value="2"/>
         <Setter Property="ListBox.BorderBrush" Value="LightSlateGray"/>
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Visible"/>
     </Style>
 
     <Style x:Key="NormalButton">

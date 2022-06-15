@@ -1,14 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.Linq;
-using FootballAdministrationApp.View.Interfaces;
-using SQLite;
 
 namespace FootballAdministrationApp.Model
 {
-    public class Team : IFootballObject
+    public class Team
     {
-        private static int currentId = 0;
+        private static int currentId;
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }

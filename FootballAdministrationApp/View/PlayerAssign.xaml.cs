@@ -13,24 +13,24 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FootballAdministrationApp.Model;
-using FootballAdministrationApp.View.Interfaces;
 using FootballAdministrationApp.ViewModel;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.View
 {
     /// <summary>
     /// Interaktionslogik für PlayerAssign.xaml
     /// </summary>
-    public partial class PlayerAssign : Window, IAgonizePlayerService
+    public partial class PlayerAssign : Window, IPlayerAssignService
     {
         public PlayerAssign()
         {
             InitializeComponent();
         }
 
-        public void CreateNewWindow(IFootballObject sourceObject, IFootballObject targetObject)
+        public void CreateNewWindow(Team sourceObject, Team targetObject)
         {
-            var playerAssignViewModel = new PlayerAssignViewModel((Team) sourceObject, (Team) targetObject, this);
+            var playerAssignViewModel = new PlayerAssignViewModel(sourceObject, targetObject, this);
             DataContext = playerAssignViewModel;
             ShowDialog();
         }

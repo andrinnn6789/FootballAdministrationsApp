@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using FootballAdministrationApp.Model;
 using FootballAdministrationApp.View;
-using FootballAdministrationApp.View.Interfaces;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class CloseWindowAgonizePlayer : ICommand
+    public class CloseWindowPlayerAssign : ICommand
     {
-        private readonly IAgonizePlayerService _agonizePlayerService;
+        private readonly IPlayerAssignService _playerAssignService;
 
-        public CloseWindowAgonizePlayer(IAgonizePlayerService agonizePlayerService)
+        public CloseWindowPlayerAssign(IPlayerAssignService playerAssignService)
         {
-            _agonizePlayerService = agonizePlayerService;
+            _playerAssignService = playerAssignService;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -28,7 +28,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            _agonizePlayerService.CloseWindow();
+            _playerAssignService.CloseWindow();
             OnCanExecuteChanged();
         }
 

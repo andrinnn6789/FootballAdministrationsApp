@@ -1,11 +1,8 @@
-﻿using FootballAdministrationApp.View.Interfaces;
-using SQLite;
-
-namespace FootballAdministrationApp.Model
+﻿namespace FootballAdministrationApp.Model
 {
-    public class Player : IFootballObject
+    public class Player
     {
-        private static int currentId = 0;
+        private static int currentId;
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

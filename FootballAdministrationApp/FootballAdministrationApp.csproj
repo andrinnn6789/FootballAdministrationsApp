@@ -26,6 +26,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +36,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -96,15 +98,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModel\Commands\SafeWindowPlayerAssign.cs" />
-    <Compile Include="ViewModel\Commands\CloseWindowAgonizePlayer.cs" />
-    <Compile Include="ViewModel\Commands\AgonizePlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\CloseWindowPlayerAssign.cs" />
+    <Compile Include="ViewModel\Commands\PlayerAssignCommand.cs" />
     <Compile Include="ViewModel\Commands\AddTeamCommand.cs" />
     <Compile Include="ViewModel\Commands\AddPlayerCommand.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PlayerAssignViewModel.cs" />
-    <Compile Include="View\Interfaces\IOpenWindowService.cs" />
-    <Compile Include="View\Interfaces\IAgonizePlayerService.cs" />
-    <Compile Include="View\Interfaces\IFootballObject.cs" />
+    <Compile Include="ViewModel\ViewInterfaces\IOpenWindowService.cs" />
+    <Compile Include="ViewModel\ViewInterfaces\ITeamWindowService.cs" />
+    <Compile Include="ViewModel\ViewInterfaces\IPlayerWindowService.cs" />
+    <Compile Include="ViewModel\ViewInterfaces\IPlayerAssignService.cs" />
     <Compile Include="View\PlayerAssign.xaml.cs">
       <DependentUpon>PlayerAssign.xaml</DependentUpon>
     </Compile>

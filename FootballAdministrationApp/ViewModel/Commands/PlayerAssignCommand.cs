@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using FootballAdministrationApp.Model;
 using FootballAdministrationApp.View;
-using FootballAdministrationApp.View.Interfaces;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class AgonizePlayerCommand : ICommand
+    public class PlayerAssignCommand : ICommand
     {
         private readonly MainWindowViewModel _viewModel;
 
-        public AgonizePlayerCommand(MainWindowViewModel viewModel)
+        public PlayerAssignCommand(MainWindowViewModel viewModel)
         {
             _viewModel = viewModel;
         }
@@ -28,9 +28,9 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            OnCanExecuteChanged();
             IOpenWindowService dialog = _viewModel.View;
-            dialog.CreateNewWindow(_viewModel.AgonizePlayerView, _viewModel.teams[0], _viewModel.Team);
+            dialog.CreateNewPlayerAssignWindow(_viewModel.PlayerAssignView, _viewModel.teams[0], _viewModel.Team);
+            OnCanExecuteChanged();
         }
 
         protected virtual void OnCanExecuteChanged()

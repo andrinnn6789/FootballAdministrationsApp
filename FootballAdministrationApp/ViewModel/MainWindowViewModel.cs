@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using FootballAdministrationApp.Model;
-using FootballAdministrationApp.View.Interfaces;
 using FootballAdministrationApp.ViewModel.Commands;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 using Prism.Mvvm;
 
 namespace FootballAdministrationApp.ViewModel
@@ -17,7 +17,9 @@ namespace FootballAdministrationApp.ViewModel
     public class MainWindowViewModel : BindableBase
     {
         public IOpenWindowService View;
-        public IAgonizePlayerService AgonizePlayerView;
+        public IPlayerAssignService PlayerAssignView;
+        public IPlayerWindowService PlayerWindowView;
+        public ITeamWindowService TeamWindowView;
         public ObservableCollection<Player> players;
         public ObservableCollection<Player> availablePlayers;
         public ObservableCollection<Team> teams;
@@ -133,16 +135,16 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IAgonizePlayerService agonizePlayerViewView)
+        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignViewView)
         {
             View = view;
-            AgonizePlayerView = agonizePlayerViewView;
+            PlayerAssignView = playerAssignViewView;
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
             availablePlayers = teams[0].GetPlayers();
             this.teams = teams;
-            AddOrModifyPlayerCommand = new AddPlayerCommand(this);
-            AddOrModifyTeamCommand = new AddTeamCommand(this);
-            AgonizePlayerCommand = new AgonizePlayerCommand(this);
+            AddPlayerCommand = new AddPlayerCommand(this);
+            AddTeamCommand = new AddTeamCommand(this);
+            AgonizePlayerCommand = new PlayerAssignCommand(this);
         }
 
         private void RefreshCurrentTeam(Team team)
@@ -152,8 +154,8 @@ namespace FootballAdministrationApp.ViewModel
             TeamCountry = team.Country;
         }
 
-        public ICommand AddOrModifyPlayerCommand { get; }
-        public ICommand AddOrModifyTeamCommand { get; }
+        public ICommand AddPlayerCommand { get; }
+        public ICommand AddTeamCommand { get; }
         public ICommand AgonizePlayerCommand { get; }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
@@ -25,6 +26,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
+            IOpenWindowService dialog = _viewModel.View;
+            dialog.CreateNewTeamWindow(_viewModel.TeamWindowView, _viewModel.Teams);
             OnCanExecuteChanged();
         }
 
