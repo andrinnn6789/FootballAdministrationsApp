@@ -97,9 +97,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Commands\DeletePlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\ModifyPlayerCommand.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerWindow.cs" />
-    <Compile Include="ViewModel\Commands\SafeWindowPlayerWindow.cs" />
-    <Compile Include="ViewModel\Commands\SafeWindowPlayerAssign.cs" />
+    <Compile Include="ViewModel\Commands\SaveWindowPlayerWindow.cs" />
+    <Compile Include="ViewModel\Commands\SaveWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\PlayerAssignCommand.cs" />
     <Compile Include="ViewModel\Commands\AddTeamCommand.cs" />

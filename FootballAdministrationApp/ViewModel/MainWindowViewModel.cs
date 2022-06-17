@@ -152,12 +152,15 @@ namespace FootballAdministrationApp.ViewModel
             availablePlayers = teams[0].GetPlayers();
             this.teams = teams;
             AddPlayerCommand = new AddPlayerCommand(this);
+            ModifyPlayerCommand = new ModifyPlayerCommand(this);
+            DeletePlayerCommand = new DeletePlayerCommand(this);
             AddTeamCommand = new AddTeamCommand(this);
             AgonizePlayerCommand = new PlayerAssignCommand(this);
         }
 
-
         public ICommand AddPlayerCommand { get; }
+        public ICommand ModifyPlayerCommand { get; }
+        public ICommand DeletePlayerCommand { get; }
         public ICommand AddTeamCommand { get; }
         public ICommand AgonizePlayerCommand { get; }
     }

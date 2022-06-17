@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
-using FootballAdministrationApp.Model;
-using FootballAdministrationApp.View;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class SafeWindowPlayerWindow : ICommand
+    public class DeletePlayerCommand : ICommand
     {
-        private readonly IPlayerWindowService _playerAssignService;
-        private readonly PlayerWindowViewModel _viewModel;
+        private readonly MainWindowViewModel _viewModel;
 
-        public SafeWindowPlayerWindow(PlayerWindowViewModel viewModel , IPlayerWindowService playerAssignService)
+        public DeletePlayerCommand(MainWindowViewModel viewModel)
         {
-            _playerAssignService = playerAssignService;
             _viewModel = viewModel;
         }
 
@@ -29,8 +22,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
         }
 
         public void Execute(object parameter)
-        { 
-            _playerAssignService.CloseWindow();
+        {
+            _viewModel.teams[0].RemoveOnePlayerById(_viewModel.AvailablePlayer.Id);
             OnCanExecuteChanged();
         }
 

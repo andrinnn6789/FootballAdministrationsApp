@@ -28,9 +28,9 @@ namespace FootballAdministrationApp.View
             InitializeComponent();
         }
 
-        public void CreateNewWindow(Team targetObject)
+        public void CreateNewWindow(Team targetObject, Player currentPlayer)
         {
-            var PlayerWindowViewModel = new PlayerWindowViewModel(this, targetObject);
+            var PlayerWindowViewModel = new PlayerWindowViewModel(this, targetObject, currentPlayer);
             DataContext = PlayerWindowViewModel;
             ShowDialog();
         }

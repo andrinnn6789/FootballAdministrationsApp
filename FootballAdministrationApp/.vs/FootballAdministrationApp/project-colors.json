@@ -10,7 +10,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Sonstige Dateien",
       "ColorIndex": -1
+    },
+    "f0378277-aa8e-4ded-8a7a-60a1f9363d6c": {
+      "ProjectGuid": "f0378277-aa8e-4ded-8a7a-60a1f9363d6c",
+      "DisplayName": "MVVMTestProject",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

@@ -65,10 +65,10 @@ namespace FootballAdministrationApp.ViewModel
             _players = sourceTeam.GetPlayers();
             _view = view ?? throw new ArgumentNullException(nameof(view));
             CloseWindow = new CloseWindowPlayerAssign(view);
-            SafeWindow = new SafeWindowPlayerAssign(this, view);
+            SaveWindow = new SaveWindowPlayerAssign(this, view);
         }
 
         public ICommand CloseWindow { get; }
-        public ICommand SafeWindow { get; }
+        public ICommand SaveWindow { get; }
     }
 }

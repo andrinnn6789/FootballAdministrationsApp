@@ -5,7 +5,7 @@ namespace FootballAdministrationApp.ViewModel.ViewInterfaces
 {
     public interface IPlayerWindowService
     {
-        void CreateNewWindow(Team targetObject);
+        void CreateNewWindow(Team targetObject, Player currentPlayer);
         void CloseWindow();
         bool EnterIsCorrect();
         List<string> ReturnValues();

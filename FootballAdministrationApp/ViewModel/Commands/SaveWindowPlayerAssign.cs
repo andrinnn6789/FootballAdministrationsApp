@@ -10,12 +10,12 @@ using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class SafeWindowPlayerAssign : ICommand
+    public class SaveWindowPlayerAssign : ICommand
     {
         private readonly IPlayerAssignService _playerAssignService;
         private readonly PlayerAssignViewModel _viewModel;
 
-        public SafeWindowPlayerAssign(PlayerAssignViewModel viewModel ,IPlayerAssignService playerAssignService)
+        public SaveWindowPlayerAssign(PlayerAssignViewModel viewModel ,IPlayerAssignService playerAssignService)
         {
             _playerAssignService = playerAssignService;
             _viewModel = viewModel;

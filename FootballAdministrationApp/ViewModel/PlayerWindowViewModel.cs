@@ -16,12 +16,13 @@ namespace FootballAdministrationApp.ViewModel
     {
         public IPlayerWindowService _view;
         public Team TargetTeam;
+        public Player CurrentPlayer;
         private string _first;
         private string _last;
-        private string _age;
-        private string _weight;
-        private string _size;
-        private string _market;
+        private int _age;
+        private int _weight;
+        private int _size;
+        private double _market;
 
         public string FirstName
         {
@@ -47,7 +48,7 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public string Age
+        public int Age
         {
             get => _age;
             set
@@ -59,7 +60,7 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public string WeightInKg
+        public int WeightInKg
         {
             get => _weight;
             set
@@ -71,7 +72,7 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public string SizeInCm
+        public int SizeInCm
         {
             get => _size;
             set
@@ -83,7 +84,7 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public string MarketValue
+        public double MarketValue
         {
             get => _market;
             set
@@ -95,15 +96,25 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public PlayerWindowViewModel(IPlayerWindowService view, Team targetTeam)
+        public PlayerWindowViewModel(IPlayerWindowService view, Team targetTeam, Player currentPlayer)
         {
             _view = view;
             TargetTeam = targetTeam;
+            CurrentPlayer = currentPlayer;
+            if (CurrentPlayer != null)
+            {
+                FirstName = CurrentPlayer.FirstName;
+                LastName = CurrentPlayer.LastName;
+                Age = CurrentPlayer.Age;
+                WeightInKg = CurrentPlayer.WeightInKg;
+                SizeInCm = CurrentPlayer.SizeInCm;
+                MarketValue = CurrentPlayer.MarketValue;
+            }
             CloseWindow = new CloseWindowPlayerWindow(_view);
-            SafeWindow = new SafeWindowPlayerWindow(this, _view);
+            SaveWindow = new SaveWindowPlayerWindow(this, _view);
         }
 
         public ICommand CloseWindow { get; }
-        public ICommand SafeWindow { get; }
+        public ICommand SaveWindow { get; }
     }
 }

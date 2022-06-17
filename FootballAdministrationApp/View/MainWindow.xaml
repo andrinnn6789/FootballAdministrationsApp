@@ -43,9 +43,9 @@
 
         <Grid Grid.Column="0" Grid.Row="1">
             <StackPanel Grid.Row="1">
-                <Button Content="Spieler bearbeiten" Style="{StaticResource NormalButton}"/>
+                <Button Content="Spieler bearbeiten" Style="{StaticResource NormalButton}" Command="{Binding ModifyPlayerCommand}"/>
                 <Button Content="Spieler hinzufügen"  Style="{StaticResource NormalButton}" Command="{Binding AddPlayerCommand}"/>
-                <Button Content="Spieler löschen"  Style="{StaticResource NormalButton}"/>
+                <Button Content="Spieler löschen"  Style="{StaticResource NormalButton}" Command="{Binding DeletePlayerCommand}"/>
             </StackPanel>
         </Grid>
 

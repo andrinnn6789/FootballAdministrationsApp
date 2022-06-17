@@ -29,7 +29,7 @@ namespace FootballAdministrationApp
         {
             InitializeComponent();
             var teams = new ObservableCollection<Team>();
-            teams.Add(new Team());
+            teams.Add(new Team("notAssignedPlayers","offline"));
             teams[0].AddPlayer(new Player("1", "Moooin", 1, 1, 1, 1));
             teams[0].AddPlayer(new Player("3", "Moooin", 1, 1, 1, 1));
             teams[0].AddPlayer(new Player("4", "Moooin", 1, 1, 1, 1));
@@ -45,9 +45,9 @@ namespace FootballAdministrationApp
             playerAssignService.CreateNewWindow(sourceObject, targetObject);
         }
 
-        public void CreateNewPlayerWindow(IPlayerWindowService playerWindowService, Team targetObject)
+        public void CreateNewPlayerWindow(IPlayerWindowService playerWindowService, Team targetObject, Player currentPlayer)
         {
-            playerWindowService.CreateNewWindow(targetObject);
+            playerWindowService.CreateNewWindow(targetObject, currentPlayer);
         }
 
         public void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject)
