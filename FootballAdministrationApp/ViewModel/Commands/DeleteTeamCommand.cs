@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class AddTeamCommand : ICommand
+    public class DeleteTeamCommand : ICommand
     {
         private readonly MainWindowViewModel _viewModel;
 
-        public AddTeamCommand(MainWindowViewModel viewModel)
+        public DeleteTeamCommand(MainWindowViewModel viewModel)
         {
             _viewModel = viewModel;
         }
@@ -26,9 +24,16 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            IOpenWindowService dialog = _viewModel.View;
-            dialog.CreateNewTeamWindow(_viewModel.TeamWindowView, _viewModel.Teams, null);
+            if (_viewModel.Team != null)
+            {
+                _viewModel.Teams.Remove(_viewModel.Team);
+                _viewModel.Players = null;
+                _viewModel.TeamCountry = null;
+                _viewModel.TeamName = null;
+            }
+            
             _viewModel.Team = _viewModel.Teams.FirstOrDefault();
+
             OnCanExecuteChanged();
         }
 

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\aport\Source\Repos\FootballAdministrationsApp\FootballAdministrationApp\obj\Debug\
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\obj\Debug\
 FootballAdministrationApp
 none
 false
 DEBUG;TRACE
-C:\Users\aport\Source\Repos\FootballAdministrationsApp\FootballAdministrationApp\App.xaml
+C:\Users\vmadmin\source\repos\FootballAdministrationsApp\FootballAdministrationApp\App.xaml
 51773200318
-3-995152044
-301931537586
-1311895249838
+3-575615124
+32649820139
+13138585198
 View\MainResources.xaml;View\MainWindow.xaml;View\PlayerAssign.xaml;View\PlayerWindow.xaml;View\TeamWindow.xaml;
 
-True
+False
 

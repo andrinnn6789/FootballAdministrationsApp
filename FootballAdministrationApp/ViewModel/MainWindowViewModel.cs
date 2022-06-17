@@ -128,28 +128,32 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        private void RefreshCurrentTeam(Team team)
+        public void RefreshCurrentTeam(Team team)
         {
-            Players = team.GetPlayers();
-            TeamName = team.Name;
-            TeamCountry = team.Country;
+            if (team != null)
+            {
+                Players = team.GetPlayers();
+                TeamName = team.Name;
+                TeamCountry = team.Country;
+            }
         }
 
         public void RefreshAvailablePlayers()
         {
-            AvailablePlayers = basicTeam.GetPlayers();
+            AvailablePlayers = BasicTeam.GetPlayers();
+            OnPropertyChanged(new PropertyChangedEventArgs(nameof(availablePlayers)));
         }
 
 
-        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow, Team basicTeam)
+        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow)
         {
-            BasicTeam = basicTeam;
+            BasicTeam = new Team("Basic","");
             View = view;
             PlayerAssignView = playerAssignView;
             PlayerWindowView = playerWindow;
             TeamWindowView = teamWindow;
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
-            availablePlayers = basicTeam.GetPlayers();
+            availablePlayers = BasicTeam.GetPlayers();
             this.teams = teams;
             AddAvailablePlayerCommand = new AddAvailablePlayerCommand(this);
             ModifyAvailablePlayerCommand = new ModifyAvailablePlayerCommand(this);
@@ -157,6 +161,8 @@ namespace FootballAdministrationApp.ViewModel
             AddTeamCommand = new AddTeamCommand(this);
             AssignPlayerCommand = new PlayerAssignCommand(this);
             RemovePlayerCommand = new RemovePlayerCommand(this);
+            ModifyTeamCommand = new ModifyTeamCommand(this);
+            DeleteTeamCommand = new DeleteTeamCommand(this);
         }
 
 
@@ -164,6 +170,8 @@ namespace FootballAdministrationApp.ViewModel
         public ICommand ModifyAvailablePlayerCommand { get; }
         public ICommand DeleteAvailablePlayerCommand { get; }
         public ICommand AddTeamCommand { get; }
+        public ICommand ModifyTeamCommand { get; }
+        public ICommand DeleteTeamCommand { get; }
         public ICommand AssignPlayerCommand { get; }
         public ICommand RemovePlayerCommand { get; }
     }

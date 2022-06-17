@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
@@ -24,7 +25,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
         public void Execute(object parameter)
         {
             IOpenWindowService dialog = _viewModel.View;
-            dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.basicTeam, null);
+            dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.BasicTeam, null);
+            _viewModel.AvailablePlayer = _viewModel.AvailablePlayers.FirstOrDefault();
             OnCanExecuteChanged();
         }
 

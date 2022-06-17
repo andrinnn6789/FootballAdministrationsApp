@@ -36,8 +36,18 @@ namespace FootballAdministrationApp.ViewModel.Commands
             }
             else
             {
-                _viewModel.Name = _viewModel.CurrentTeam.Name;
-                _viewModel.Country = _viewModel.CurrentTeam.Country;
+                var newTeam = new Team()
+                {
+                    Id = _viewModel.CurrentTeam.Id,
+                    Name = _viewModel.Name,
+                    Country = _viewModel.Country
+                };
+                foreach (var player in _viewModel.CurrentTeam.GetPlayers())
+                {
+                   newTeam.AddPlayer(player); 
+                }
+                _viewModel.Teams.Add(newTeam);
+                _viewModel.Teams.Remove(_viewModel.CurrentTeam);
             }
             _playerAssignService.CloseWindow();
             OnCanExecuteChanged();

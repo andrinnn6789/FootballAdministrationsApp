@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
@@ -24,7 +25,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
         public void Execute(object parameter)
         {
             if (_viewModel.AvailablePlayer != null)
-                _viewModel.basicTeam.RemoveOnePlayerById(_viewModel.AvailablePlayer.Id);  
+                _viewModel.BasicTeam.RemoveOnePlayerById(_viewModel.AvailablePlayer.Id);
+            _viewModel.AvailablePlayer = _viewModel.AvailablePlayers.FirstOrDefault();
             OnCanExecuteChanged();
         }
 

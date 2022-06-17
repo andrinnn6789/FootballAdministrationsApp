@@ -97,6 +97,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Commands\DeleteTeamCommand.cs" />
+    <Compile Include="ViewModel\Commands\ModifyTeamCommand.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerWindow.cs" />
     <Compile Include="ViewModel\Commands\DeleteAvailablePlayerCommand.cs" />
     <Compile Include="ViewModel\Commands\RemovePlayerCommand.cs" />

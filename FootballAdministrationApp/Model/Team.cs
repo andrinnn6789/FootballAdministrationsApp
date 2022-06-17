@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace FootballAdministrationApp.Model
@@ -9,7 +10,6 @@ namespace FootballAdministrationApp.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public string Country { get; set; }
-        public bool isEditable { get; set; }
 
         private readonly ObservableCollection<Player> _players = new ObservableCollection<Player>(); 
 

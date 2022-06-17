@@ -67,9 +67,9 @@
 
         <Grid Grid.Column="1" Grid.Row="1">
             <StackPanel Grid.Row="1">
-                <Button Content="Mannschaft bearbeiten"  Style="{StaticResource NormalButton}"/>
+                <Button Content="Mannschaft bearbeiten"  Style="{StaticResource NormalButton}" Command="{Binding ModifyTeamCommand}"/>
                 <Button Content="Mannschaft hinzufügen"  Style="{StaticResource NormalButton}" Command="{Binding AddTeamCommand}"/>
-                <Button Content="Mannschaft löschen"  Style="{StaticResource NormalButton}"/>
+                <Button Content="Mannschaft löschen"  Style="{StaticResource NormalButton}" Command="{Binding DeleteTeamCommand}"/>
             </StackPanel>
         </Grid>
 

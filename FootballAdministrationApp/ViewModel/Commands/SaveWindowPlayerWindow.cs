@@ -42,6 +42,8 @@ namespace FootballAdministrationApp.ViewModel.Commands
                 _viewModel.CurrentPlayer.WeightInKg = _viewModel.WeightInKg;
                 _viewModel.CurrentPlayer.SizeInCm = _viewModel.SizeInCm;
                 _viewModel.CurrentPlayer.MarketValue = _viewModel.MarketValue;
+                _viewModel.TargetTeam.AddPlayer(_viewModel.CurrentPlayer);
+                _viewModel.TargetTeam.RemoveOnePlayerById(_viewModel.CurrentPlayer.Id);
             }
             _playerAssignService.CloseWindow();
             OnCanExecuteChanged();

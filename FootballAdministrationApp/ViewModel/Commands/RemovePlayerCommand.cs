@@ -25,7 +25,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
         {
             if (_viewModel.Player != null)
             {
-                _viewModel.basicTeam.AddPlayer(_viewModel.Player);
+                _viewModel.BasicTeam.AddPlayer(_viewModel.Player);
                 _viewModel.Team.RemoveOnePlayerById(_viewModel.Player.Id);
             }  
             OnCanExecuteChanged();
