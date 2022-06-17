@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using FootballAdministrationApp.Model;
+using FootballAdministrationApp.View;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class AddTeamCommand : ICommand
+    public class CloseWindowTeamWindow : ICommand
     {
-        private readonly MainWindowViewModel _viewModel;
+        private readonly ITeamWindowService _playerWindowService;
 
-        public AddTeamCommand(MainWindowViewModel viewModel)
+        public CloseWindowTeamWindow(ITeamWindowService playerWindowService)
         {
-            _viewModel = viewModel;
+            _playerWindowService = playerWindowService;
         }
 
         public event EventHandler CanExecuteChanged;
@@ -26,8 +28,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            IOpenWindowService dialog = _viewModel.View;
-            dialog.CreateNewTeamWindow(_viewModel.TeamWindowView, _viewModel.Teams, null);
+            _playerWindowService.CloseWindow();
             OnCanExecuteChanged();
         }
 

@@ -10,7 +10,7 @@
         public int WeightInKg { get; set; }
         public int SizeInCm { get; set; }
         public double MarketValue { get; set; }
-        public bool IsActive { get; set; } = true;
+        public bool IsActive { get; set; }
         public int Fk_TeamId { get; set; } = 0;
 
         public Team Team;
@@ -25,6 +25,7 @@
             MarketValue = 0;
             Id = currentId;
             currentId++;
+            IsActive = true;
         }
 
         public Player(string firstName, string lastName, int age, int weightInKg, int sizeInCm, double marketValue)
@@ -37,6 +38,7 @@
             MarketValue = marketValue;
             Id = currentId;
             currentId++;
+            IsActive = true;
         }
     }
 }

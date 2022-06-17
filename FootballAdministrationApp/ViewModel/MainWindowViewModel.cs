@@ -74,6 +74,7 @@ namespace FootballAdministrationApp.ViewModel
                 }
             }
         }
+
         public Player Player
         {
             get => _player;
@@ -142,6 +143,11 @@ namespace FootballAdministrationApp.ViewModel
             TeamCountry = team.Country;
         }
 
+        public void RefreshAvailablePlayers()
+        {
+            AvailablePlayers = teams[0].GetPlayers();
+        }
+
         public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow)
         {
             View = view;
@@ -151,17 +157,20 @@ namespace FootballAdministrationApp.ViewModel
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
             availablePlayers = teams[0].GetPlayers();
             this.teams = teams;
-            AddPlayerCommand = new AddPlayerCommand(this);
-            ModifyPlayerCommand = new ModifyPlayerCommand(this);
-            DeletePlayerCommand = new DeletePlayerCommand(this);
+            AddAvailablePlayerCommand = new AddAvailablePlayerCommand(this);
+            ModifyAvailablePlayerCommand = new ModifyAvailablePlayerCommand(this);
+            DeleteAvailablePlayerCommand = new DeleteAvailablePlayerCommand(this);
             AddTeamCommand = new AddTeamCommand(this);
-            AgonizePlayerCommand = new PlayerAssignCommand(this);
+            AssignPlayerCommand = new PlayerAssignCommand(this);
+            RemovePlayerCommand = new RemovePlayerCommand(this);
         }
 
-        public ICommand AddPlayerCommand { get; }
-        public ICommand ModifyPlayerCommand { get; }
-        public ICommand DeletePlayerCommand { get; }
+
+        public ICommand AddAvailablePlayerCommand { get; }
+        public ICommand ModifyAvailablePlayerCommand { get; }
+        public ICommand DeleteAvailablePlayerCommand { get; }
         public ICommand AddTeamCommand { get; }
-        public ICommand AgonizePlayerCommand { get; }
+        public ICommand AssignPlayerCommand { get; }
+        public ICommand RemovePlayerCommand { get; }
     }
 }

@@ -7,6 +7,6 @@ namespace FootballAdministrationApp.ViewModel.ViewInterfaces
     {
         void CreateNewPlayerAssignWindow(IPlayerAssignService playerAssignService, Team sourceObject, Team targetObject);
         void CreateNewPlayerWindow(IPlayerWindowService playerWindowService, Team targetObject, Player currentPlayer);
-        void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject);
+        void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject,Team currentTeam);
     }
 }

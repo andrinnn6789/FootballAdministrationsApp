@@ -7,7 +7,5 @@ namespace FootballAdministrationApp.ViewModel.ViewInterfaces
     {
         void CreateNewWindow(Team targetObject, Player currentPlayer);
         void CloseWindow();
-        bool EnterIsCorrect();
-        List<string> ReturnValues();
     }
 }

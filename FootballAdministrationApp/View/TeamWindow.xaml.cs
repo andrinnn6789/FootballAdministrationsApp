@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FootballAdministrationApp.Model;
+using FootballAdministrationApp.ViewModel;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.View
@@ -28,24 +29,16 @@ namespace FootballAdministrationApp.View
             InitializeComponent();
         }
 
-        public void CreateNewWindow(ObservableCollection<Team> targetObject)
+        public void CreateNewWindow(ObservableCollection<Team> targetObject, Team currentTeam)
         {
+            var playerWindowViewModel = new TeamWindowViewModel(this, targetObject, currentTeam);
+            DataContext = playerWindowViewModel;
             ShowDialog();
         }
 
         public void CloseWindow()
         {
             Hide();
-        }
-
-        public bool EnterIsCorrect()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> ReturnValues()
-        {
-            throw new NotImplementedException();
         }
 
         protected override void OnClosing(CancelEventArgs e)

@@ -25,14 +25,14 @@
         <Grid Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <TextBlock Text="Name:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding Name}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="0" Grid.Column="1">
             <StackPanel>
                 <TextBlock Text="Land:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding Country}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
@@ -44,7 +44,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Abbrechen" Grid.Column="1" Style="{StaticResource NormalButton}" Command="{Binding CloseWindow}"/>
-                <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}"/>
+                <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}" Command="{Binding SaveWindow}"/>
             </Grid>
         </Grid>
     </Grid>

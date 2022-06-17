@@ -6,9 +6,7 @@ namespace FootballAdministrationApp.ViewModel.ViewInterfaces
 {
     public interface ITeamWindowService
     {
-        void CreateNewWindow(ObservableCollection<Team> targetObject);
+        void CreateNewWindow(ObservableCollection<Team> targetObject, Team currentTeam);
         void CloseWindow();
-        bool EnterIsCorrect();
-        List<string> ReturnValues();
     }
 }

@@ -97,17 +97,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModel\Commands\DeletePlayerCommand.cs" />
-    <Compile Include="ViewModel\Commands\ModifyPlayerCommand.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerWindow.cs" />
+    <Compile Include="ViewModel\Commands\DeleteAvailablePlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\RemovePlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\ModifyAvailablePlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\CloseWindowTeamWindow.cs" />
+    <Compile Include="ViewModel\Commands\SaveWindowTeamWindow.cs" />
     <Compile Include="ViewModel\Commands\SaveWindowPlayerWindow.cs" />
     <Compile Include="ViewModel\Commands\SaveWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\PlayerAssignCommand.cs" />
     <Compile Include="ViewModel\Commands\AddTeamCommand.cs" />
-    <Compile Include="ViewModel\Commands\AddPlayerCommand.cs" />
+    <Compile Include="ViewModel\Commands\AddAvailablePlayerCommand.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PlayerAssignViewModel.cs" />
+    <Compile Include="ViewModel\TeamWindowViewModel.cs" />
     <Compile Include="ViewModel\PlayerWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewInterfaces\IOpenWindowService.cs" />
     <Compile Include="ViewModel\ViewInterfaces\ITeamWindowService.cs" />

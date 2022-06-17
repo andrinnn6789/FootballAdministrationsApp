@@ -30,24 +30,14 @@ namespace FootballAdministrationApp.View
 
         public void CreateNewWindow(Team targetObject, Player currentPlayer)
         {
-            var PlayerWindowViewModel = new PlayerWindowViewModel(this, targetObject, currentPlayer);
-            DataContext = PlayerWindowViewModel;
+            var playerWindowViewModel = new PlayerWindowViewModel(this, targetObject, currentPlayer);
+            DataContext = playerWindowViewModel;
             ShowDialog();
         }
 
         public void CloseWindow()
         {
             Hide();
-        }
-
-        public bool EnterIsCorrect()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<string> ReturnValues()
-        {
-            throw new NotImplementedException();
         }
 
         protected override void OnClosing(CancelEventArgs e)

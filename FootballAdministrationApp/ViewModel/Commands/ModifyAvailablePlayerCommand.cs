@@ -5,11 +5,11 @@ using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.ViewModel.Commands
 {
-    public class ModifyPlayerCommand : ICommand
+    public class ModifyAvailablePlayerCommand : ICommand
     {
         private readonly MainWindowViewModel _viewModel;
 
-        public ModifyPlayerCommand(MainWindowViewModel viewModel)
+        public ModifyAvailablePlayerCommand(MainWindowViewModel viewModel)
         {
             _viewModel = viewModel;
         }
@@ -23,9 +23,13 @@ namespace FootballAdministrationApp.ViewModel.Commands
 
         public void Execute(object parameter)
         {
-            IOpenWindowService dialog = _viewModel.View;
-            dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.teams[0], _viewModel.AvailablePlayer);
-            OnCanExecuteChanged();
+            if (_viewModel.AvailablePlayer != null)
+            {
+                IOpenWindowService dialog = _viewModel.View;
+                dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.teams[0], _viewModel.AvailablePlayer);
+                _viewModel.RefreshAvailablePlayers();
+                OnCanExecuteChanged();
+            }
         }
 
         protected virtual void OnCanExecuteChanged()

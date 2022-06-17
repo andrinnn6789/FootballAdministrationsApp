@@ -50,9 +50,9 @@ namespace FootballAdministrationApp
             playerWindowService.CreateNewWindow(targetObject, currentPlayer);
         }
 
-        public void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject)
+        public void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject, Team currentTeam)
         {
-            teamWindowService.CreateNewWindow(targetObject);
+            teamWindowService.CreateNewWindow(targetObject, currentTeam);
         }
     }
 }
