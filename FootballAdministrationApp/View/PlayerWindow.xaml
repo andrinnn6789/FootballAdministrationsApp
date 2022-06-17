@@ -27,42 +27,42 @@
         <Grid Grid.Row="0" Grid.Column="0">
             <StackPanel>
                 <TextBlock Text="Nachname:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding LastName}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="0" Grid.Column="1">
             <StackPanel>
                 <TextBlock Text="Vorname:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding FirstName}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="0">
             <StackPanel>
                 <TextBlock Text="Alter:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding Age}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="1">
             <StackPanel>
-                <TextBlock Text="Grösse:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBlock Text="Grösse in cm:" Style="{StaticResource NormalText}"/>
+                <TextBox Text="{Binding SizeInCm}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="0">
             <StackPanel>
-                <TextBlock Text="Gewicht:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBlock Text="Gewicht in kg:" Style="{StaticResource NormalText}"/>
+                <TextBox Text="{Binding WeightInKg}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Row="2" Grid.Column="1">
             <StackPanel>
                 <TextBlock Text="Transfermarktwert:" Style="{StaticResource NormalText}"/>
-                <TextBox Text="" Style="{StaticResource NormalTextBox}"/>
+                <TextBox Text="{Binding MarketValue}" Style="{StaticResource NormalTextBox}"/>
             </StackPanel>
         </Grid>
 
@@ -74,7 +74,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Button Content="Abbrechen" Grid.Column="1" Style="{StaticResource NormalButton}" Command="{Binding CloseWindow}"/>
-                <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}"/>
+                <Button Content="Speichern" Grid.Column="2" Style="{StaticResource NormalButton}" Command="{Binding SafeWindow}"/>
             </Grid>
         </Grid>
 

@@ -135,10 +135,19 @@ namespace FootballAdministrationApp.ViewModel
             }
         }
 
-        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignViewView)
+        private void RefreshCurrentTeam(Team team)
+        {
+            Players = team.GetPlayers();
+            TeamName = team.Name;
+            TeamCountry = team.Country;
+        }
+
+        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow)
         {
             View = view;
-            PlayerAssignView = playerAssignViewView;
+            PlayerAssignView = playerAssignView;
+            PlayerWindowView = playerWindow;
+            TeamWindowView = teamWindow;
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
             availablePlayers = teams[0].GetPlayers();
             this.teams = teams;
@@ -147,12 +156,6 @@ namespace FootballAdministrationApp.ViewModel
             AgonizePlayerCommand = new PlayerAssignCommand(this);
         }
 
-        private void RefreshCurrentTeam(Team team)
-        {
-            Players = team.GetPlayers();
-            TeamName = team.Name;
-            TeamCountry = team.Country;
-        }
 
         public ICommand AddPlayerCommand { get; }
         public ICommand AddTeamCommand { get; }

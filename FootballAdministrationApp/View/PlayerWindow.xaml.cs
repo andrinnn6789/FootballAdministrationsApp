@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using FootballAdministrationApp.Model;
+using FootballAdministrationApp.ViewModel;
 using FootballAdministrationApp.ViewModel.ViewInterfaces;
 
 namespace FootballAdministrationApp.View
@@ -28,12 +30,14 @@ namespace FootballAdministrationApp.View
 
         public void CreateNewWindow(Team targetObject)
         {
-            throw new NotImplementedException();
+            var PlayerWindowViewModel = new PlayerWindowViewModel(this, targetObject);
+            DataContext = PlayerWindowViewModel;
+            ShowDialog();
         }
 
         public void CloseWindow()
         {
-            throw new NotImplementedException();
+            Hide();
         }
 
         public bool EnterIsCorrect()
@@ -44,6 +48,12 @@ namespace FootballAdministrationApp.View
         public List<string> ReturnValues()
         {
             throw new NotImplementedException();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            CloseWindow();
         }
     }
 }

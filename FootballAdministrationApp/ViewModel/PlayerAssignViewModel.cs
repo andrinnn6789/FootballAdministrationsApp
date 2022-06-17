@@ -16,8 +16,8 @@ namespace FootballAdministrationApp.ViewModel
 {
     public class PlayerAssignViewModel : BindableBase
     {
+                private readonly IPlayerAssignService _view;
         private Team _sourceTeam;
-        private readonly IPlayerAssignService _view;
         private ObservableCollection<Player> _players;
         private Player _player;
         public Team targetTeam { get; set; }
@@ -65,10 +65,10 @@ namespace FootballAdministrationApp.ViewModel
             _players = sourceTeam.GetPlayers();
             _view = view ?? throw new ArgumentNullException(nameof(view));
             CloseWindow = new CloseWindowPlayerAssign(view);
-            SafeWindowPlayerAssign = new SafeWindowPlayerAssign(this, view);
+            SafeWindow = new SafeWindowPlayerAssign(this, view);
         }
 
         public ICommand CloseWindow { get; }
-        public ICommand SafeWindowPlayerAssign { get; }
+        public ICommand SafeWindow { get; }
     }
 }

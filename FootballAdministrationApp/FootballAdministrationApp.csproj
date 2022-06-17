@@ -97,6 +97,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel\Commands\CloseWindowPlayerWindow.cs" />
+    <Compile Include="ViewModel\Commands\SafeWindowPlayerWindow.cs" />
     <Compile Include="ViewModel\Commands\SafeWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\CloseWindowPlayerAssign.cs" />
     <Compile Include="ViewModel\Commands\PlayerAssignCommand.cs" />
@@ -104,6 +106,7 @@
     <Compile Include="ViewModel\Commands\AddPlayerCommand.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="ViewModel\PlayerAssignViewModel.cs" />
+    <Compile Include="ViewModel\PlayerWindowViewModel.cs" />
     <Compile Include="ViewModel\ViewInterfaces\IOpenWindowService.cs" />
     <Compile Include="ViewModel\ViewInterfaces\ITeamWindowService.cs" />
     <Compile Include="ViewModel\ViewInterfaces\IPlayerWindowService.cs" />

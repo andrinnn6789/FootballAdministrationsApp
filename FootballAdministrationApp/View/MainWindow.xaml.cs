@@ -37,7 +37,7 @@ namespace FootballAdministrationApp
             teams[1].AddPlayer(new Player());
             teams[1].AddPlayer(new Player());
             teams.Add(new Team());
-            DataContext = new MainWindowViewModel(teams, this, new PlayerAssign());
+            DataContext = new MainWindowViewModel(teams, this, new PlayerAssign(), new PlayerWindow(), new TeamWindow());
         }
 
         public void CreateNewPlayerAssignWindow(IPlayerAssignService playerAssignService, Team sourceObject, Team targetObject)
@@ -47,12 +47,12 @@ namespace FootballAdministrationApp
 
         public void CreateNewPlayerWindow(IPlayerWindowService playerWindowService, Team targetObject)
         {
-            throw new NotImplementedException();
+            playerWindowService.CreateNewWindow(targetObject);
         }
 
         public void CreateNewTeamWindow(ITeamWindowService teamWindowService, ObservableCollection<Team> targetObject)
         {
-            throw new NotImplementedException();
+            teamWindowService.CreateNewWindow(targetObject);
         }
     }
 }

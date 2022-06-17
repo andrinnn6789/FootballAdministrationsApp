@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,12 +30,12 @@ namespace FootballAdministrationApp.View
 
         public void CreateNewWindow(ObservableCollection<Team> targetObject)
         {
-            throw new NotImplementedException();
+            ShowDialog();
         }
 
         public void CloseWindow()
         {
-            throw new NotImplementedException();
+            Hide();
         }
 
         public bool EnterIsCorrect()
@@ -45,6 +46,12 @@ namespace FootballAdministrationApp.View
         public List<string> ReturnValues()
         {
             throw new NotImplementedException();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+            CloseWindow();
         }
     }
 }

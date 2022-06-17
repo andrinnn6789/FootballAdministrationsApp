@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oTX7NQ/d3lydZwrRUvuB/GmnYH7E2LTROxlNNFTsllE0R4caF0qxmsQpk7Y6PT3yF84iJ1pU3XSxg4OOL0/IHQ==",
+  "dgSpecHash": "BEI5sWwky80eJx6K/kUU+RIZM6rull7YGQpJSf5cwQ+vfNPNlNTmnNR8eyGisEao7kQSeDUZhY5BXTy2zKJFnQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andrin\\source\\repos\\FootballAdministrationsApp\\MVVMTestProject\\MVVMTestProject.csproj",
+  "projectFilePath": "C:\\Users\\vmadmin\\source\\repos\\FootballAdministrationsApp\\MVVMTestProject\\MVVMTestProject.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Andrin\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
+    "C:\\Users\\vmadmin\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512"
   ],
   "logs": []
 }
