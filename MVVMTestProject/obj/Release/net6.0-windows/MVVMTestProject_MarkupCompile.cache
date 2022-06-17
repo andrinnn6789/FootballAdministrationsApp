@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\obj\Debug\net6.0-windows\
+C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\obj\Release\net6.0-windows\
 MVVMTestProject
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\App.xaml
 1-904131567
 

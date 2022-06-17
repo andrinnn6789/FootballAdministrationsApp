@@ -4,11 +4,11 @@
 winexe
 C#
 .cs
-C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\obj\Debug\
+C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\obj\Release\
 MVVM_Vorlage
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\aport\Source\Repos\FootballAdministrationsApp\MVVMTestProject\App.xaml
 11759095889
 

@@ -29,6 +29,8 @@ namespace FootballAdministrationApp.ViewModel
         private string _teamName;
         private string _teamCountry;
 
+        public Team BasicTeam { get; set;}
+
         public ObservableCollection<Player> Players
         {
             get => players;
@@ -55,17 +57,7 @@ namespace FootballAdministrationApp.ViewModel
 
         public ObservableCollection<Team> Teams
         {
-            get
-            {
-                var teams = new ObservableCollection<Team>();
-                foreach (var team in this.teams)
-                {
-                    if (team.Id != 0)
-                        teams.Add(team);
-                }
-
-                return teams;
-            }
+            get => teams;
             set
             {
                 if (SetProperty(ref teams, value))
@@ -145,17 +137,19 @@ namespace FootballAdministrationApp.ViewModel
 
         public void RefreshAvailablePlayers()
         {
-            AvailablePlayers = teams[0].GetPlayers();
+            AvailablePlayers = basicTeam.GetPlayers();
         }
 
-        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow)
+
+        public MainWindowViewModel(ObservableCollection<Team> teams, IOpenWindowService view, IPlayerAssignService playerAssignView, IPlayerWindowService playerWindow, ITeamWindowService teamWindow, Team basicTeam)
         {
+            BasicTeam = basicTeam;
             View = view;
             PlayerAssignView = playerAssignView;
             PlayerWindowView = playerWindow;
             TeamWindowView = teamWindow;
             if (Team != null) RefreshCurrentTeam(teams[Team.Id]);
-            availablePlayers = teams[0].GetPlayers();
+            availablePlayers = basicTeam.GetPlayers();
             this.teams = teams;
             AddAvailablePlayerCommand = new AddAvailablePlayerCommand(this);
             ModifyAvailablePlayerCommand = new ModifyAvailablePlayerCommand(this);

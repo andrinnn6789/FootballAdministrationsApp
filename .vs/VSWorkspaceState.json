@@ -2,7 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\FootballAdministrationApp",
-    "\\FootballAdministrationApp\\ViewModel"
+    "\\FootballAdministrationApp\\View",
+    "\\FootballAdministrationApp\\ViewModel",
+    "\\FootballAdministrationApp\\ViewModel\\Commands",
+    "\\MVVMTestProject",
+    "\\MVVMTestProject\\ViewModels"
   ],
   "SelectedNode": "\\FootballAdministrationApp\\ViewModel\\MainWindowViewModel.cs",
   "PreviewInSolutionExplorer": false

@@ -29,15 +29,15 @@ namespace FootballAdministrationApp
         {
             InitializeComponent();
             var teams = new ObservableCollection<Team>();
-            teams.Add(new Team("notAssignedPlayers","offline"));
-            teams[0].AddPlayer(new Player("1", "Moooin", 1, 1, 1, 1));
-            teams[0].AddPlayer(new Player("3", "Moooin", 1, 1, 1, 1));
-            teams[0].AddPlayer(new Player("4", "Moooin", 1, 1, 1, 1));
+            var basicTeam = new Team("notAssignedPlayers", "offline");
+            basicTeam.AddPlayer(new Player("1", "Moooin", 1, 1, 1, 1));
+            basicTeam.AddPlayer(new Player("3", "Moooin", 1, 1, 1, 1));
+            basicTeam.AddPlayer(new Player("4", "Moooin", 1, 1, 1, 1));
             teams.Add(new Team("Bayern","Deutschland"));
             teams[1].AddPlayer(new Player());
             teams[1].AddPlayer(new Player());
             teams.Add(new Team());
-            DataContext = new MainWindowViewModel(teams, this, new PlayerAssign(), new PlayerWindow(), new TeamWindow());
+            DataContext = new MainWindowViewModel(teams, this, new PlayerAssign(), new PlayerWindow(), new TeamWindow(), basicTeam);
         }
 
         public void CreateNewPlayerAssignWindow(IPlayerAssignService playerAssignService, Team sourceObject, Team targetObject)

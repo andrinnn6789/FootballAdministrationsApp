@@ -26,7 +26,7 @@ namespace FootballAdministrationApp.ViewModel.Commands
             if (_viewModel.AvailablePlayer != null)
             {
                 IOpenWindowService dialog = _viewModel.View;
-                dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.teams[0], _viewModel.AvailablePlayer);
+                dialog.CreateNewPlayerWindow(_viewModel.PlayerWindowView, _viewModel.basicTeam, _viewModel.AvailablePlayer);
                 _viewModel.RefreshAvailablePlayers();
                 OnCanExecuteChanged();
             }
