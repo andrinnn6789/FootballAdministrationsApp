@@ -1,16 +1,24 @@
-<mxfile host="app.diagrams.net" modified="2022-11-02T08:31:22.156Z" agent="5.0 (Windows)" etag="yPxzHTd4yhjdNziVRTga" version="20.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-11-02T12:07:09.271Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36" etag="EuYgdAN5GzOmzt0M8Y8V" version="20.4.1" type="github">
   <diagram id="59yKYrdZ8OSLuCtYd6CJ" name="Seite-1">
-    <mxGraphModel dx="2249" dy="1913" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2500" dy="2103" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ajkfXvM7vY-nBLtSQp1p-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=classic;endFill=1;" edge="1" parent="1" source="uNNzlU8CO7LDZuqC6dOK-5" target="ajkfXvM7vY-nBLtSQp1p-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ajkfXvM7vY-nBLtSQp1p-4" value="User öffnet Fitness App" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="ajkfXvM7vY-nBLtSQp1p-3">
+          <mxGeometry x="-0.2451" y="4" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="uNNzlU8CO7LDZuqC6dOK-5" value="" style="ellipse;html=1;shape=endState;fillColor=strokeColor;" parent="1" vertex="1">
-          <mxGeometry x="40" y="185" width="30" height="30" as="geometry" />
+          <mxGeometry x="-250" y="185" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="uNNzlU8CO7LDZuqC6dOK-6" value="Home Screen" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="220" y="140" width="250" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="uNNzlU8CO7LDZuqC6dOK-7" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="uNNzlU8CO7LDZuqC6dOK-5" target="uNNzlU8CO7LDZuqC6dOK-6" edge="1">
+        <mxCell id="uNNzlU8CO7LDZuqC6dOK-7" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endFill=1;" parent="1" source="ajkfXvM7vY-nBLtSQp1p-1" target="uNNzlU8CO7LDZuqC6dOK-6" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="90" y="165" as="sourcePoint" />
             <mxPoint x="140" y="115" as="targetPoint" />
@@ -240,6 +248,9 @@
           <mxGeometry x="-0.3867" y="-1" relative="1" as="geometry">
             <mxPoint x="28" y="19" as="offset" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ajkfXvM7vY-nBLtSQp1p-1" value="Fitness App startet" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="170" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
